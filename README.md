@@ -20,17 +20,17 @@ Repositorio para entrega de TPs grupales para la materia "Sintaxis y semántica 
         </tr>
         <tr>
             <td>Ariel Rotolo Wulff</td>
-            <td>1643551</td>
+            <td>164.355-1</td>
             <td><a href="https://github.com/ArielRotolo">ArielRotolo</a></td>
         </tr>
         <tr>
             <td>Alexander Aracen</td>
-            <td>150565-8</td>
+            <td>150.565-8</td>
             <td><a href="https://github.com/angraween">angraween</a></td>
         </tr>
         <tr>
             <td>Francisco Fidel Lema Estevez</td>
-            <td>176165-1</td>
+            <td>176.165-1</td>
             <td><a href="https://github.com/Francisco1106">Francisco1106</a></td>
         </tr>
         <tr>
