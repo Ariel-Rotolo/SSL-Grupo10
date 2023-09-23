@@ -13,6 +13,7 @@ int main() {
     printf("Resultado de su tranformacion: %d",resultado);
 
     return 0;
+    
 
 }
 
