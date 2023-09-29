@@ -13,13 +13,14 @@ int posicion_actual(char,char*,int,int);
 bool es_final(int,int*,int);
 
 int main(){
-    char entrada[] = "2+2+2 / 2 * 2 + 2";
+    char entrada[15];
     char valorNumericoString[20];
     char operador, operadoaux;
     int valorEntero = 0 , eccTotal = 0,eccAux = 0;
     int i = 1;
     int j = 0;
-     
+    printf("Ingrese su calculo matematico: \n");
+    scanf("%s", entrada); 
     char automata[][15] =  {{7,2,2,2,2,2,2,2,2,2,1,1,7,7,7},
                             {7,2,2,2,2,2,2,2,2,2,7,7,7,7,7},
                             {2,2,2,2,2,2,2,2,2,2,1,1,3,4,7},
@@ -38,7 +39,7 @@ int main(){
   
 
     if(!gramaticaValida(automata,alfabeto,estadosFinales,accEstFin,accAlf,entrada)){
-        printf("Su cuenta tiene algun error por lo tanto no es valida");
+        printf("Su cuenta tiene algun error por lo tanto no es valida\n");
         return 0;
     }
 
@@ -100,8 +101,8 @@ int main(){
         
         reiniciarString(valorNumericoString);
     }
-    printf("valor de i: %d\n",i);
-    printf("total: %d",eccTotal);
+
+    printf("total: %d.\n",eccTotal);
     return 0;
 
 }
@@ -122,10 +123,10 @@ int tranformador(char* variable){
 
 
 void removerEspacios(char *str) {
-    int length = strlen(str);
+    int longitud = length(str);
     int i, j = 0;
 
-    for (i = 0; i < length; i++) {
+    for (i = 0; i < longitud; i++) {
         if (str[i] != ' ') {
             str[j++] = str[i];
         }
