@@ -8,86 +8,99 @@ void removerEspacios(char*);
 void reiniciarString(char*);
 int length(char*);
 
+bool gramaticaValida(char[][15],char*,int*,int,int,char*);
+int posicion_actual(char,char*,int,int);
+bool es_final(int,int*,int);
+
 int main(){
-    char ejemplo[] = "+ 4 * 2 + 2 * 2";
+    char entrada[] = "2+2+2 / 2 * 2 + 2";
     char valorNumericoString[20];
     char operador, operadoaux;
     int valorEntero = 0 , eccTotal = 0,eccAux = 0;
     int i = 1;
     int j = 0;
      
-    removerEspacios(ejemplo);
-    int longitudArray = length(ejemplo);
-    printf("array: %s\n",ejemplo); 
-    
-    printf("array longitud: %d\n",longitudArray);
+    char automata[][15] =  {{7,2,2,2,2,2,2,2,2,2,1,1,7,7,7},
+                            {7,2,2,2,2,2,2,2,2,2,7,7,7,7,7},
+                            {2,2,2,2,2,2,2,2,2,2,1,1,3,4,7},
+                            {7,2,2,2,2,2,2,2,2,2,7,7,7,7,7},
+                            {7,5,5,5,5,5,5,5,5,5,7,7,7,7,7},
+                            {7,5,5,5,5,5,5,5,5,5,1,1,6,4,7},
+                            {7,5,5,5,5,5,5,5,5,5,7,7,7,7,7},
+                            {7,7,7,7,7,7,7,7,7,7,7,7,7,7,7}};
 
+    int estadosFinales[] = {2,5};
+    int accEstFin = 2;
+    char alfabeto[14] = {'0','1','2','3','4','5','6','7','8','9','+','-','*','/'};
+    int accAlf = 14;
+    int inicio = 0;
+    removerEspacios(entrada);
+  
+
+    if(!gramaticaValida(automata,alfabeto,estadosFinales,accEstFin,accAlf,entrada)){
+        printf("Su cuenta tiene algun error por lo tanto no es valida");
+        return 0;
+    }
+
+    
+    int longitudArray = length(entrada);
     // si empieza con +/- o con numero
-    if (ejemplo[0] != '-' && ejemplo[0] != '+'){
+    if (entrada[0] != '-' && entrada[0] != '+'){
         operador = '+';
-        valorNumericoString[0] = ejemplo[0];
+        valorNumericoString[0] = entrada[0];
         j = 1;
-        printf("se selecciono operador de base \n");
     }else{
-        operador = ejemplo[0];
-        printf("el operador inicial es: %d \n",operador);
+        operador = entrada[0];
     }
 
     while (i < longitudArray){        
 
-        while(ejemplo[i] <= '9' && ejemplo[i] >= '0'){
-            valorNumericoString[j++] = ejemplo[i++];
-            printf("ultimo valor de i = %d \n",i);
-
+        while(entrada[i] <= '9' && entrada[i] >= '0'){
+            valorNumericoString[j++] = entrada[i++];
         }
-
-
 
         valorEntero = tranformador(valorNumericoString);
         
         if(i < longitudArray){
-            operadoaux = ejemplo[i++];  
+            operadoaux = entrada[i++];
             if(operadoaux == '*' || operadoaux == '/'){
                 eccAux = valorEntero;
-                reiniciarString(valorNumericoString);
-                j = 0;
                 while (operadoaux == '*' || operadoaux == '/'){
-
-                    while(ejemplo[i] <= '9' && ejemplo[i] >= '0'){
-                        valorNumericoString[j++] = ejemplo[i++];
+                    reiniciarString(valorNumericoString);
+                    j = 0;
+                    while(entrada[i] <= '9' && entrada[i] >= '0'){
+                        valorNumericoString[j++] = entrada[i++];    
                     }
                     valorEntero = tranformador(valorNumericoString);
+
+
                     if(operadoaux == '*'){
                         eccAux = eccAux * valorEntero;
                     }else{ 
                         eccAux = eccAux / valorEntero;
                     }
-                        operadoaux = ejemplo[i++];
+                        operadoaux = entrada[i++];
+                        reiniciarString(valorNumericoString);
                 }
             }else{   
-                printf("entre a la suma/resta \n");
                 eccAux = valorEntero;
-            }  
+            } 
         }else{
-            printf("ultimo valor");
             eccAux = valorEntero;
         }
         
         if(operador == '+'){
-            printf("suma: %d + %d\n",eccTotal,eccAux);
             eccTotal = eccTotal + eccAux;
         }else{
             eccTotal = eccTotal - eccAux;
         }
-        
+        eccAux = 0;
         operador = operadoaux;
-        printf("ultimo valor de i = %d \n",i);
         j = 0;
-        printf("%d\n",ejemplo[i]);
         
         reiniciarString(valorNumericoString);
     }
-    
+    printf("valor de i: %d\n",i);
     printf("total: %d",eccTotal);
     return 0;
 
@@ -134,7 +147,7 @@ void reiniciarString(char *str){
 }
 
 int length(char *str){
-    int i = 1;
+    int i = 0;
     while (str[i] != '\0')
     {
         i++;
@@ -144,37 +157,32 @@ int length(char *str){
 
 
 /* continuar parte gramatica */
-bool gramaticaValida(char** automata, char* alfabeto, int* estadosFinales, int accEstFin, int accAlf, char* palabra) {
+bool gramaticaValida(char automata[][15], char* alfabeto, int* estadosFinales, int accEstFin, int accAlf, char* palabra) {
     int estadoAnterior = 0;
     int estadoActual = 0;
     int i = 0;
 
     while (palabra[i] != '\0') {
         estadoAnterior = estadoActual;
-        estadoActual = automata[estadoActual][posicion_actual(palabra[i], alfabeto)];
+        estadoActual = automata[estadoActual][posicion_actual(palabra[i], alfabeto,7,14)];
         i++;
     }
-
-    return es_final(estadoAnterior, estadosFinales, accEstFin);
+    return es_final(estadoActual, estadosFinales, accEstFin);
 }
 
 
-int pocicion_actual(char elemento,char* alfabeto) {
+int posicion_actual(char elemento,char* alfabeto,int estadoDeRechazo,int accAlf) {
     int i;
-    int accAlf;
-    accAlf = strlen(alfabeto);
     for (i = 0; i < accAlf; i++) {
         if (alfabeto[i] == elemento) {
             return i;
         }
     }
-
-    return 5;
+    return accAlf;
 }
 
 bool es_final(int estado, int* estadosFinales, int accEstFin) {
     int i;
-
     for (i = 0; i < accEstFin; i++) {
         if (estadosFinales[i] == estado) {
             return true;
