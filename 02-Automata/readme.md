@@ -12,7 +12,7 @@ Para la evidencia de prueba decidimos usar como prueba el archivo automata.txt e
 La prueba salio satisfactoria mostrando el siguiente mensaje por pantalla:
 <img src="./Capturas EV/ev punto 1.png"/>
 
-## Documentacion del código
+## Documentación del código
 Para el código utilizamos tres librerías:
 ```c
 #include <stdio.h> // biblioteca estándar de input/output
@@ -21,8 +21,8 @@ Para el código utilizamos tres librerías:
 ```
 y utilizamos 2 funciones propias
 ```c
-int posicion_actual(char,char*); // Función que retorna según el carácter y el autómata la posición actual
-bool es_final(int,int*,int); // Funcion para saber si la posición actual es o no final
+int posicion_actual(char, char*); // Función que retorna según el carácter y el autómata la posición actual
+bool es_final(int, int*, int); // Funcion para saber si la posición actual es o no final
 ```
 
 ## Autómata utilizado
@@ -37,7 +37,7 @@ Debe realizar una función que reciba un carácter numérico y retorne un númer
 
 ## Documentación del código
 ```c
-#include <stdio.h> // biblioteca base para ejecutar el código
+#include <stdio.h> // biblioteca estándar de input/output
 ```
 y utilizamos 1 funciones propia
 
@@ -56,23 +56,23 @@ La cadena debe ingresar por línea de comando o por archivo.<br>
 ## Evidencias de prueba
 <img src="./Capturas EV/Evidencia de prueba punto 3.png" />
 
-## Documentacion del codigo
+## Documentación del codigo
 
-Para el codigo utilizamos tres librerias: 
+Para el código utilizamos tres librerías:
 ```c
-#include <stdio.h> // biblioteca base para ejecutar el codigo
+#include <stdio.h> // biblioteca estándar de input/output
 #include <stdbool.h> // biblioteca para ejecutar funciones con return bool
 #include <string.h> // biblioteca para la utilizacion de la funcion length
 ```
 y Utilizamos 7 funciones propias
 
 ```c
-int tranformador(char*); // tranforma una strign en un int
-void removerEspacios(char*); // elimina los espacion en el estrign
+int transformador(char*); // transforma una string en un int
+void removerEspacios(char*); // elimina los espacios en el estrign
 void reiniciarString(char*); // borra todos los datos de un string
 int length(char*); // calcula la longitud de un string
 
-bool gramaticaValida(char[][15],char*,int*,int,int,char*);// evalua si una gramatica pertenece a un automata
-int posicion_actual(char,char*,int,int); // Funcion que retorna segun el caracter y el automata la pocicion actual
-bool es_final(int,int*,int); // Funcion para saber si la pocicion actual es o no final 
+bool gramaticaValida(char[][15], char*, int*, int, int, char*); // evaluar si una gramática pertenece a un autómata
+int posicion_actual(char, char*, int, int); // Función que retorna segun el caracter y el autómata la posición actual
+bool es_final(int, int*, int); // Funcion para saber si la posición actual es o no final
 ```
