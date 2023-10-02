@@ -56,7 +56,7 @@ La cadena debe ingresar por línea de comando o por archivo.<br>
 ## Evidencias de prueba
 <img src="./Capturas EV/Evidencia de prueba punto 3.png" />
 
-## Documentación del codigo
+## Documentación del código
 
 Para el código utilizamos tres librerías:
 ```c
