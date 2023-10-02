@@ -13,16 +13,16 @@ La prueba salio satisfactoria mostrando el siguiente mensaje por pantalla:
 <img src="./Capturas EV/ev punto 1.png"/>
 
 ## Documentacion del codigo
-Para el codigo utilizamos tres librerias: 
+Para el código utilizamos tres librerías:
 ```c
-#include <stdio.h> // biblioteca base para ejecutar el codigo
+#include <stdio.h> // biblioteca estándar de input/output
 #include <stdbool.h> // biblioteca para ejecutar funciones con return bool
-#include <string.h> // biblioteca para la utilizacion de la funcion length
+#include <string.h> // biblioteca para la utilización de la función length
 ```
 y utilizamos 2 funciones propias
 ```c
-int pocicion_actual(char,char*); // Funcion que retorna segun el caracter y el automata la pocicion actual
-bool es_final(int,int*,int); // Funcion para saber si la pocicion actual es o no final 
+int posicion_actual(char,char*); // Función que retorna según el carácter y el autómata la posición actual
+bool es_final(int,int*,int); // Funcion para saber si la posición actual es o no final
 ```
 
 ## Automata utilizado
