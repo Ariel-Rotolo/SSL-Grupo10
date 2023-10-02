@@ -48,17 +48,12 @@ int transformador(char* variable); // función que transforma el string en un en
 # Ejercicio 3
 ## Consigna
 
-Ingresar una cadena que represente una operación simple con enteros decimales y <br>
-obtener su resultado, se debe operar con +,- ,/, *. Ejemplo = 3+4*8/2+3-5 = 29. Debe <br>
-poder operar con cualquier número de operandos y operadores respetando la precedencia <br>
-de los operadores aritméticos y sin paréntesis. <br>
-La cadena ingresada debe ser validada previamente preferentemente reutilizando las <br>
-funciones del ejercicio 1. <br>
-Para poder realizar la operación los caracteres deben convertirse a números utilizando la <br>
-función 2. <br>
-La cadena debe ingresar por línea de comando o por archivo. <br>
+Ingresar una cadena que represente una operación simple con enteros decimales y obtener su resultado, se debe operar con +,- ,/, . Ejemplo = 3+48/2+3-5 = 29. Debe poder operar con cualquier número de operandos y operadores respetando la precedencia de los operadores aritméticos y sin paréntesis.<br><br>
+La cadena ingresada debe ser validada previamente preferentemente reutilizando las funciones del ejercicio 1.<br><br>
+Para poder realizar la operación los caracteres deben convertirse a números utilizando la función 2.<br><br>
+La cadena debe ingresar por línea de comando o por archivo.<br>
 
-## Evidencias de prueva
+## Evidencias de prueba
 <img src="./Capturas EV/Evidencia de prueba punto 3.png" />
 
 ## Documentacion del codigo
