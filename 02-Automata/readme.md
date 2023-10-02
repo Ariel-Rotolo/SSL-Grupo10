@@ -73,6 +73,6 @@ void reiniciarString(char*); // borra todos los datos de un string
 int length(char*); // calcula la longitud de un string
 
 bool gramaticaValida(char[][15], char*, int*, int, int, char*); // evaluar si una gramática pertenece a un autómata
-int posicion_actual(char, char*, int, int); // Función que retorna segun el caracter y el autómata la posición actual
+int posicion_actual(char, char*, int, int); // Función que retorna según el carácter y el autómata la posición actual
 bool es_final(int, int*, int); // Función para saber si la posición actual es o no final
 ```
