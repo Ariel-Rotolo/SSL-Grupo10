@@ -8,8 +8,8 @@ Debe diagramar y entregar el o los autómatas utilizados y las matrices de trans
 La cadena debe ingresar por línea de comando o por archivo <br>
 
 ## Evidencias de prueba
-Para la evidencia de prueba decidimos usar como prueba el archivo automata.txt en el cual se ecuentra una strign con todo los tipos de variables posibles para utilizar.<br>
-La prueba salio satifactoria mostrando el siguiente mensaje por pantalla:
+Para la evidencia de prueba decidimos usar como prueba el archivo automata.txt en el cual se encuentra una string con todo los tipos de variables posibles para utilizar.
+La prueba salio satisfactoria mostrando el siguiente mensaje por pantalla:
 <img src="./Capturas EV/ev punto 1.png"/>
 
 ## Documentacion del codigo
