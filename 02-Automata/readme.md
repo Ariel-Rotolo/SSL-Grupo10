@@ -32,17 +32,17 @@ bool es_final(int,int*,int); // Funcion para saber si la posición actual es o n
 ## Consigna
 Debe realizar una función que reciba un carácter numérico y retorne un número entero.
 
-## Evidencias de prueva
+## Evidencias de prueba
 <img src="./Capturas EV/Ev punto 2.png"/>
 
-## Documentacion del codigo
+## Documentación del código
 ```c
-#include <stdio.h> // biblioteca base para ejecutar el codigo
+#include <stdio.h> // biblioteca base para ejecutar el código
 ```
 y utilizamos 1 funciones propia
 
 ```c
-int tranformador(char* variable); // funcion que tranforma el string en un entero
+int transformador(char* variable); // función que transforma el string en un entero
 ```
 
 # Ejercicio 3
