@@ -12,7 +12,7 @@ Para la evidencia de prueba decidimos usar como prueba el archivo automata.txt e
 La prueba salio satisfactoria mostrando el siguiente mensaje por pantalla:
 <img src="./Capturas EV/ev punto 1.png"/>
 
-## Documentacion del codigo
+## Documentacion del código
 Para el código utilizamos tres librerías:
 ```c
 #include <stdio.h> // biblioteca estándar de input/output
@@ -25,7 +25,7 @@ int posicion_actual(char,char*); // Función que retorna según el carácter y e
 bool es_final(int,int*,int); // Funcion para saber si la posición actual es o no final
 ```
 
-## Automata utilizado
+## Autómata utilizado
 <img src="./Capturas EV/AutomataUtiliizadoPunto1.drawio.png"/>
 
 # Ejercicio 2
