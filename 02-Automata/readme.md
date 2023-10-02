@@ -22,7 +22,7 @@ Para el código utilizamos tres librerías:
 y utilizamos 2 funciones propias
 ```c
 int posicion_actual(char, char*); // Función que retorna según el carácter y el autómata la posición actual
-bool es_final(int, int*, int); // Funcion para saber si la posición actual es o no final
+bool es_final(int, int*, int); // Función para saber si la posición actual es o no final
 ```
 
 ## Autómata utilizado
@@ -39,7 +39,7 @@ Debe realizar una función que reciba un carácter numérico y retorne un númer
 ```c
 #include <stdio.h> // biblioteca estándar de input/output
 ```
-y utilizamos 1 funciones propia
+y utilizamos 1 función propia
 
 ```c
 int transformador(char* variable); // función que transforma el string en un entero
@@ -62,9 +62,9 @@ Para el código utilizamos tres librerías:
 ```c
 #include <stdio.h> // biblioteca estándar de input/output
 #include <stdbool.h> // biblioteca para ejecutar funciones con return bool
-#include <string.h> // biblioteca para la utilizacion de la funcion length
+#include <string.h> // biblioteca para la utilización de la función length
 ```
-y Utilizamos 7 funciones propias
+y utilizamos 7 funciones propias
 
 ```c
 int transformador(char*); // transforma una string en un int
@@ -74,5 +74,5 @@ int length(char*); // calcula la longitud de un string
 
 bool gramaticaValida(char[][15], char*, int*, int, int, char*); // evaluar si una gramática pertenece a un autómata
 int posicion_actual(char, char*, int, int); // Función que retorna segun el caracter y el autómata la posición actual
-bool es_final(int, int*, int); // Funcion para saber si la posición actual es o no final
+bool es_final(int, int*, int); // Función para saber si la posición actual es o no final
 ```
