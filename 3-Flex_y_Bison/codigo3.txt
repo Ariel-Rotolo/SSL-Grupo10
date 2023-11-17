@@ -1,5 +1,5 @@
 inicio
 	A := )34 + A);
 	B := 1 - 1 + 2 + 3;
-    escribir(A,B);
+	escribir(A,B);
 fin
