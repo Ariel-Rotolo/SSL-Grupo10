@@ -1,0 +1,4 @@
+inicio
+    A := B + 3;
+    escribir(A,B);
+fin
