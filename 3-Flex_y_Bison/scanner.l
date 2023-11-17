@@ -26,7 +26,7 @@ NUMERO      [0-9]+
                         perror("Error semantico");
                         exit(1);
                     } else {
-                        printf("<NUMERO: %d> ", valor);
+                        printf("<NUMERO: %ld> ", valor);
                         return NUMERO;
                     }
                 }
