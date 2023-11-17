@@ -1,6 +1,8 @@
 inicio
-	A := BB - 34 + A;
-	B := 8 + 3;
-	escribir(CC);
-	leer(A, B);
+    a := 10;
+    b := 5;
+    suma := a + b;
+    escribir(suma);
+    resta := a - b;
+    escribir(resta);
 fin
