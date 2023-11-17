@@ -14,11 +14,11 @@ lista_sentencias: /* permite cero sentencias */ | lista_sentencias sentencia PUN
 
 sentencia: asignacion | lectura | escritura;
 
-asignacion: ID ASIGNACION expresion;
+asignacion: ID ASIGNACION expresion | error_asignacion;
 
-lectura: LEER PARENTESISIZQ lista_ids PARENTESISDER;
+lectura: LEER PARENTESISIZQ lista_ids PARENTESISDER | error_lectura;
 
-escritura: ESCRIBIR PARENTESISIZQ lista_expresiones PARENTESISDER;
+escritura: ESCRIBIR PARENTESISIZQ lista_expresiones PARENTESISDER | error_escritura;
 
 lista_ids: ID | lista_ids COMA ID;
 
@@ -27,6 +27,12 @@ lista_expresiones: expresion | lista_expresiones COMA expresion;
 expresion: operando | expresion SUMA operando | expresion RESTA operando;
 
 operando: ID | NUMERO | PARENTESISIZQ expresion PARENTESISDER;
+
+error_asignacion: ID ASIGNACION error { yyerror("Error en la asignacion"); };
+
+error_lectura: LEER PARENTESISIZQ error PARENTESISDER { yyerror("Error de lectura"); };
+
+error_escritura: ESCRIBIR PARENTESISIZQ error PARENTESISDER { yyerror("Error de escritura"); };
 
 %%
 
